@@ -18,32 +18,46 @@ Flick.App = (function(){
 		bindDOMevents();
 		loadTemplate( 'nav', setsUrl, '#nav', function(data){
 			console.log(data.photosets);
+			replaceLinks();
+			var hash = location.hash;
+			if(hash != ''){
+				alert(hash);
+			}
+
+		});
+		var hash = location.hash;
+		// if(hash != ''){
+		// 	console.log(hash);
+			
+		// 	console.log($('a[href=' + hash +']').data('title'));
+		// 	//$('a').find(hash)
+		// }else{
+		// 	return
+		// }
+		//alert(hash.substr(1));
+		
+	};
+
+	var replaceLinks = function(){
+		$('ul#nav li a').each(function(){
+			var dataTitle = $(this).data('title');
+			dataTitle = dataTitle.replace(/\s+/g, '-').toLowerCase();
+			$(this).attr('href', '#' + dataTitle)
 		});
 	};
 
-
 	var bindDOMevents = function(){
 		$('ul#nav').on('click', 'li a',function(e){
-			e.preventDefault();
-			
 			var setID =  $(this).attr('id');
 			loadPics( setID );
-		
 			var setName =  $(this).children('span').text() ;		
-			changeURL(setName);
 		});
-
 	};
 
 	var loadPics = function(set){
 		$('#main').empty();
 		var photosUrl = baseUrl + 'flickr.photosets.getPhotos&api_key=' + key + '&photoset_id=' + set + '&format=json&jsoncallback=?';	
 		loadTemplate( 'pics', photosUrl, '#main');
-	};
-
-	var changeURL = function(newUrl){
-		newUrl = newUrl.replace(/\s+/g, '-').toLowerCase();
-		history.pushState(null, null, newUrl)
 	};
 
 	var loadTemplate = function( name, url, divAppendTo, callback ){
