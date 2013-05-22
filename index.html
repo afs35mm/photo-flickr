@@ -21,6 +21,14 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
+        <div id="header">
+            
+        </div>
+
+        <div id="top">
+            <div id="head-fix"></div>
+
+        </div>
 
         <ul id="nav">
             
@@ -37,7 +45,15 @@
         <script src="js/plugins.js"></script>
         <script src="js/handlebars.js"></script>
         <script src="js/ember.js"></script>
+        <script src="js/superslide.js"></script>
         <script src="js/main.js"></script>
+
+        <script>
+        $(document).ready(function(){
+            Flick.App.init();
+            $('#main').slideShow('sdfs');
+        });
+        </script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 

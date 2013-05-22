@@ -66,7 +66,4 @@ Flick.App = (function(){
 
 }());
 
-$(document).ready(function(){
-	Flick.App.init();
-});
 
