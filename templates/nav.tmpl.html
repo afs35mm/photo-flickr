@@ -1,11 +1,9 @@
-
-	{{#each photosets.photoset}}
-		<li>
-			<!-- <a id="{{id}}" href="http://www.flickr.com/photos/afs35mm/sets/{{id}}"> -->
-			<a id="{{id}}" data-title="{{title._content}}" href="">
-				<span>{{this.title._content}}</span>
-				<img src='http://farm{{this.farm}}.static.flickr.com/{{this.server}}/{{this.primary}}_{{this.secret}}_q.jpg' width="100" height="100" />
-			</a>
-		</li>
-	{{/each}}
+{{#each photosets.photoset}}
+	<li>
+		<a id="{{id}}" href="{{title._content}}" >
+			<span>{{this.title._content}}</span>
+			<img src='http://farm{{this.farm}}.static.flickr.com/{{this.server}}/{{this.primary}}_{{this.secret}}_q.jpg' width="100" height="100" />
+		</a>
+	</li>
+{{/each}}
 

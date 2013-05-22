@@ -17,31 +17,24 @@ Flick.App = (function(){
 	var init = function(){
 		bindDOMevents();
 		loadTemplate( 'nav', setsUrl, '#nav', function(data){
-			console.log(data.photosets);
+			var length = data.photosets.photoset.length;			
 			replaceLinks();
-			var hash = location.hash;
-			if(hash != ''){
-				alert(hash);
-			}
-
 		});
 		var hash = location.hash;
-		// if(hash != ''){
-		// 	console.log(hash);
-			
-		// 	console.log($('a[href=' + hash +']').data('title'));
-		// 	//$('a').find(hash)
-		// }else{
-		// 	return
-		// }
-		//alert(hash.substr(1));
+		if(hash != ''){
+			alert(hash);
+			var linkNeeded = $('ul#nav a').has('a[href="'+hash+'"]');
+			console.log(linkNeeded.attr('id'));
+		}	
 		
 	};
 
 	var replaceLinks = function(){
 		$('ul#nav li a').each(function(){
-			var dataTitle = $(this).data('title');
+			var dataTitle = $(this).attr('href');
+			//dataTitle = dataTitle 
 			dataTitle = dataTitle.replace(/\s+/g, '-').toLowerCase();
+			//console.log(dataTitle);
 			$(this).attr('href', '#' + dataTitle)
 		});
 	};
@@ -65,7 +58,7 @@ Flick.App = (function(){
 		$.get(templatePath,function(templates){
 			compiledTemp = Handlebars.compile(templates);
 			$.getJSON(url ,function(data){
-				console.log(data);
+				//console.log(data);
 				$(divAppendTo).append(compiledTemp(data));	
 				if(callback) callback(data);
 			});
