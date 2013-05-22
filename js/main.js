@@ -20,23 +20,18 @@ Flick.App = (function(){
 			var length = data.photosets.photoset.length;			
 			replaceLinks();
 		});
-		var hash = location.hash;
-		if(hash != ''){
-			alert(hash);
-			var linkNeeded = $('ul#nav a').has('a[href="'+hash+'"]');
-			console.log(linkNeeded.attr('id'));
-		}	
-		
 	};
 
 	var replaceLinks = function(){
 		$('ul#nav li a').each(function(){
 			var dataTitle = $(this).attr('href');
-			//dataTitle = dataTitle 
 			dataTitle = dataTitle.replace(/\s+/g, '-').toLowerCase();
-			//console.log(dataTitle);
-			$(this).attr('href', '#' + dataTitle)
+			$(this).attr('href', '#' + dataTitle);
 		});
+		var hash = location.hash;
+		if(hash != ''){
+			$('a[href="' + hash +'"]').trigger('click');
+		}
 	};
 
 	var bindDOMevents = function(){
