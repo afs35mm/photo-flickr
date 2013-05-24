@@ -3,20 +3,33 @@
     $.fn.superSlide = function(options) {
 
     	var settings = $.extend({
-            duration : 7000,
-        }, options);
+            transition : 'fade',
+            duration: 7000,
+            elmName: 'superSlideElm',
+            fadeSpeed: 500
+        }, options);        
 
-    	//console.log(settings);
-    	var sayHay = function(){
-        	console.log(this);
+        var self = $(this);
+
+        var cycleElms = function(){
+           //console.log(self);
+           var lastChild = self.children(":last");
+           console.log(self.children(":first"));
+           lastChild.fadeOut( settings.fadeSpeed , function(){
+
+           });
         };
 
-        return this.each( function() {
+        this.each( function() {
             $(this).addClass('superSlide');
-            $(this).children().addClass('superSlideElm');
-            //setInterval(startFade,5000);
+            $(this).children().each(function(key,value){
+                console.log(key,value)
+                $(value).addClass(settings.elmName).css('z-index',500 - key);
+            });
+            //setInterval(cycleElms,3000);    
         });
 
+        return this;
     }
 
 }(jQuery));
