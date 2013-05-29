@@ -15,5 +15,5 @@ ul#nav {display:inline-block; min-height:600px;}
 #top{width:100%; height:600px; background-color:red;}
 #top #head-fix{ position:absolute; background-color:#fff; width:100%; height:50px;}
 
-.superSlide {position:relative; }
-.superSlide .superSlideElm {position:absolute; width:100%; height:100%; }
+.superFade {position:relative; overflow:hidden; }
+.superFade .superFadeElm {position:absolute; display:none;}
