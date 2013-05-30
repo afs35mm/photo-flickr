@@ -17,3 +17,9 @@ ul#nav {display:inline-block; min-height:600px;}
 
 .superFade {position:relative; overflow:hidden; }
 .superFade .superFadeElm {position:absolute; display:none;}
+
+/**
+For added protection add the below 2 lines, replacing #top with whichever
+element the superFade plugin is called on **/
+#top img {display:none;}
+#top img:first-child {display:inline;}
