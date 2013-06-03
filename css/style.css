@@ -12,14 +12,4 @@ ul#nav {display:inline-block; min-height:600px;}
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
 }
 
-#top{width:100%; height:600px; background-color:red;}
-#top #head-fix{ position:absolute; background-color:#fff; width:100%; height:50px;}
-
-.superFade {position:relative; overflow:hidden; }
-.superFade .superFadeElm {position:absolute; display:none;}
-
-/**
-For added protection add the below 2 lines, replacing #top with whichever
-element the superFade plugin is called on **/
-#top img {display:none;}
-#top img:first-child {display:inline;}
+#top{width:100%; height:600px; }
