@@ -2,7 +2,7 @@ var Main = Main || {};
 
 Main.App = (function(){
 	
-	var GLOBALVAR = 'xyz';
+	var slideHeight = $('#top').height();
 
 	var init = function(){
 		bindDomEvents();
@@ -11,7 +11,7 @@ Main.App = (function(){
 	var bindDomEvents = function(){
 		$(window).on('scroll',function(){
 			var scrollTop = $(window).scrollTop();
-			if(scrollTop == 0 ){
+			if(scrollTop <= slideHeight ){
 				$('#header').removeClass('scroll');
 			}else{
 				$('#header').addClass('scroll');

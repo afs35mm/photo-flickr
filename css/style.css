@@ -14,8 +14,8 @@
     -moz-transition: background-color 1000ms linear; /* Firefox */
     -webkit-transition: background-color 1000ms linear; /* Safari and Chrome */
     -o-transition: background-color 1000ms linear; /* Opera */
+    border-bottom:1px solid transparent;
 }
-
 #top #header h1 {
 	color:#fff;
 	font-size: 22px;
@@ -25,10 +25,10 @@
 	filter: dropshadow(color=#3b3b3b, offx=1, offy=1);
 	float:right; 
 	padding: 13px 30px 0 0;
-}
-
-#top #header.scroll{
-	background-color:red;
+	transition: color 1000ms linear;
+    -moz-transition: color 1000ms linear; /* Firefox */
+    -webkit-transition: color 1000ms linear; /* Safari and Chrome */
+    -o-transition: color 1000ms linear; /* Opera */
 }
 #top #header svg {
 	padding: 8px 0 0 30px;
@@ -39,9 +39,20 @@
     -webkit-transition: fill 1000ms linear; /* Safari and Chrome */
     -o-transition: fill 1000ms linear; /* Opera */
 }
-
+#top #header.scroll{
+	/**background-color:#a8a8a8;**/
+    background-color: rgb(153, 153, 153);
+    background-color: rgba(153, 153, 153, 0.9);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#999999, endColorstr=#999999);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#999999, endColorstr=#999999)";
+}
+#top #header.scroll h1 {
+	color:#272727;
+	text-shadow: 1px 1px 0px transparent;
+	filter: dropshadow(color=transparent, offx=1, offy=1);
+}
 #top #header.scroll svg path {
-	fill:blue;
+	fill:#272727;
 }
 
 /**CLEARFIX FIX**/
