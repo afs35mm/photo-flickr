@@ -1,15 +1,14 @@
-# humanstxt.org/
-# The humans responsible & technology colophon
+/* TEAM */
+	ANDREW SCHORR
 
-# TEAM
+/* DESIGNER */
+	ANDREW SCHORR
 
-    <name> -- <role> -- <twitter>
+/* DEVELOPER */
+	ANDREW SCHORR
 
-# THANKS
+/* PHOTOGRAPHER */
+	ANDREW SCHORR
 
-    <name>
-
-# TECHNOLOGY COLOPHON
-
-    HTML5, CSS3
-    Normalize.css, jQuery, Modernizr
+/* FUN MACHINE */
+	ANDREW SCHORR
