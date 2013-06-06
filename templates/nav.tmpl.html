@@ -1,9 +1,11 @@
 {{#each photosets.photoset}}
-	<li>
-		<a id="{{id}}" href="{{title._content}}" >
-			<span>{{this.title._content}}</span>
-			<img src='http://farm{{this.farm}}.static.flickr.com/{{this.server}}/{{this.primary}}_{{this.secret}}_q.jpg' width="100" height="100" />
-		</a>
-	</li>
+	{{#if visibility_can_see_set}}
+		<li>
+			<a id="{{id}}" href="{{title._content}}" >
+				<span>{{this.title._content}}</span>
+				<img src='http://farm{{this.farm}}.static.flickr.com/{{this.server}}/{{this.primary}}_{{this.secret}}_q.jpg'  />
+			</a>
+		</li>
+	{{/if}}
 {{/each}}
 

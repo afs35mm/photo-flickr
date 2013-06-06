@@ -55,5 +55,25 @@
 	fill:#272727;
 }
 
+
+#bottom #nav{
+	background-color:b lue;
+	margin: 0 auto;
+	width:930px;
+}
+#bottom #nav li{
+	display:block;
+	float:left;
+	margin: 0 5px 5px 0;
+}
+#bottom #nav li a {
+	display:inline-block;
+}
+#bottom #nav li a span{ 
+	display:none;
+}
+#bottom #main {display:block;}
+
+
 /**CLEARFIX FIX**/
 .cf:before,.cf:after {content: " "; display: table;}.cf:after {clear: both;}.cf {*zoom: 1;}
