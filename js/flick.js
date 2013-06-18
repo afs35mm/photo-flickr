@@ -20,7 +20,7 @@ Flick.App = (function(){
 			console.log(data);
 			var length = data.photosets.photoset.length;			
 			replaceLinks();
-			$('#nav').addClass('cf');
+			//$('#nav').addClass('cf');
 		});
 
 	};
@@ -41,7 +41,9 @@ Flick.App = (function(){
 		$('ul#nav').on('click', 'li a',function(e){
 			var setID =  $(this).attr('id');
 			loadPics( setID );
-			var setName =  $(this).children('span').text() ;		
+			var setName =  $(this).children('span').text() ;
+			// console.log(Main.App);
+			Main.App.mainShow();
 		});
 	};
 
