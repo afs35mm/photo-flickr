@@ -2,8 +2,13 @@
 	{{#if visibility_can_see_set}}
 		<li>
 			<a id="{{id}}" href="{{title._content}}" >
-				<span>{{this.title._content}}</span>
+				
 				<img src='http://farm{{this.farm}}.static.flickr.com/{{this.server}}/{{this.primary}}_{{this.secret}}_q.jpg'  />
+				<div class="cover1"></div>
+				<div class="cover2"></div>
+				<div id="text">
+					<span>{{this.title._content}}</span>
+				</div>
 			</a>
 		</li>
 	{{/if}}
