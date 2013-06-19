@@ -4,7 +4,8 @@ Main.App = (function(){
 	
 	var slideHeight = $('#top').height(),
 		headHeight = $('#header').height(),
-		canShowHead = true;
+		canShowHead = true,
+		positionY = 0;
 
 	var init = function(){
 		$('#imgs').EzFade();
@@ -14,16 +15,20 @@ Main.App = (function(){
 
 	var mainShow = function(){
 		canShowHead = false;
-		$('#main').show();
+		positionY = window.pageYOffset;
+		$('#header').removeClass('scroll').parent().siblings('#main').fadeIn().siblings('#close').show();
+		//$('#main').fadeIn();
 		window.scrollTo(0,0)
-		$('#close').show();
+		//$('#close').show();
 	};
 
 	var mainHide = function(){
 		canShowHead = true;
-		$('#main').fadeOut().css('position','absolute');
-		$('#close').hide();
+		$('#main').fadeOut().css('position','absolute').children('#pics').empty().parent().siblings('#close').hide();
+		//$('#close').hide();
+		//$('#pics').empty();
 		window.location.hash = '';
+		window.scrollTo(0,positionY)
 	}
 
 	var bindDomEvents = function(){
@@ -40,12 +45,14 @@ Main.App = (function(){
 
 		$('#close').on('click',function(){
 			mainHide();
-			//$('#main');
 		});
 
-		$('#about').on('click',function(){
-			$('#main').empty().css('position','fixed');
+		$('#about').on('click',function(e){
+			e.preventDefault();
+			$('#main').css('position','fixed').children('#pics').load('templates/about.tmpl.html #abt');
+			//$('#pics').load('templates/about.tmpl.html #abt');
 			mainShow();
+			
 		});
 	};
 

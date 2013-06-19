@@ -48,9 +48,9 @@ Flick.App = (function(){
 	};
 
 	var loadPics = function(set){
-		$('#main').empty();
+		$('#pics').empty();
 		var photosUrl = baseUrl + 'flickr.photosets.getPhotos&api_key=' + key + '&photoset_id=' + set + '&format=json&jsoncallback=?';	
-		loadTemplate( 'pics', photosUrl, '#main');
+		loadTemplate( 'pics', photosUrl, '#pics');
 	};
 
 	var loadTemplate = function( name, url, divAppendTo, callback ){

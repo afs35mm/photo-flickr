@@ -1,9 +1,12 @@
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;}article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}body {line-height: 1;}ol, ul {list-style: none;}blockquote, q {quotes: none;}blockquote:before, blockquote:after,q:before, q:after {content: '';content: none;}table {border-collapse: collapse;border-spacing: 0;}html {}
 *{	
 	-webkit-box-sizing: border-box; 
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;  
+
 }
-a{text-decoration:none; color#272727;}
+a{text-decoration:none; color:#272727;}
+li{list-style-type:none;}
 body{font-size:100%;}
 #top{
 	width:100%; 
@@ -206,11 +209,46 @@ body{font-size:100%;}
 	margin: 40px 0;
 	max-width:100%;
 }
+#main #about{
+	padding-top:120px;
+	width:70%;
+	margin: 0 auto;
+	color:#fff;
+	font-family:sans-serif;
+}
+#main #about h2{
+	padding-bottom:20px;
+	
+	line-height:1.8rem;
+	font-size:1.5rem;
+}
+#main #about ul {
+	padding-bottom:20px;
+	border-bottom:3px solid #fff;
+	text-align:center;
+	margin-bottom:4px;
+}
+#main #about ul li{
+	display:inline-block;
+}
+#main #about ul li img{
+	margin:0;
+}
+#main #about p#blurb{
+	padding-top:40px;
+	border-top: 2px solid #fff;
+	line-height:1.2rem;
+	font-size:1.1rem;
+}
+#main #about p#blurb a {
+	color:#fff;
+	text-decoration:underline;
+}
 #close{
 	position:fixed;
 	bottom:0;
 	right:0;
-	background-color:red;
+	background-image:url('../img/close.jpg');
 	cursor:pointer;
 	display:block;
 	width:50px;height:50px;
