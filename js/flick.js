@@ -18,7 +18,7 @@ Flick.App = (function(){
 		bindDOMevents();
 		loadTemplate( 'nav', setsUrl, '#nav', function(data){
 			console.log(data);
-			var length = data.photosets.photoset.length;			
+			//var length = data.photosets.photoset.length;			
 			replaceLinks();
 			//$('#nav').addClass('cf');
 		});
