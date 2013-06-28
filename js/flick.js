@@ -29,7 +29,7 @@ Flick.App = (function(){
 		$('ul#nav li a').each(function(){
 			var dataTitle = $(this).attr('href');
 			dataTitle = dataTitle.replace(/\s+/g, '-').toLowerCase();
-			$(this).attr('href', '#' + dataTitle);
+			$(this).attr('href', '#!' + dataTitle);
 		});
 		var hash = location.hash;
 		if(hash != ''){
