@@ -260,11 +260,29 @@ body{font-size:100%;}
 }
 @media only screen and (max-width: 863px) {
 	#bottom #center {width:600px;}
+	#top #header ul#links li {padding: 23px 0 0 20px;}
+	#top #header h1 {font-size:20px; padding-top:24px;}
 }
 
 @media only screen and (max-width: 663px) {
 	#bottom #center {width:400px;}
+	#top #header ul#links li {padding: 23px 0 0 20px;}
+	#top #header h1 {font-size:18px; padding-top:21px;}
 }
+
+@media only screen and (max-width: 463px) {
+	#bottom #center {width:200px;}
+	#top #header ul#links li {padding: 23px 0 0 20px;}
+	#top #header h1 {font-size:18px; padding-top:21px;}
+	#bottom #center #nav li {margin: 0 30px 0 0;}
+	#bottom #center {width: 370px;}
+}
+
+@media only screen and (max-width: 433px) {
+	#bottom #center {width: 188px;}
+}
+
+
 
 /**CLEARFIX FIX**/
 .cf:after {
