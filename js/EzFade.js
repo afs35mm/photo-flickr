@@ -16,7 +16,7 @@
         defaults = {
             duration: 3000,
             parentName: 'EzFade',
-            elmName: 'EzFadeElm',
+            childName: 'EzFadeElm',
             fadeSpeed: 1000,
             width: '100%',
             height: '100%',
@@ -32,17 +32,13 @@
         // is generally empty as we don't want to alter the default options for
         // future instances of the plugin
         this.options = $.extend( {}, defaults, options );
-
         this._defaults = defaults;
-        this._name = pluginName;
-        
+        this._name = pluginName;        
         this.dimensions = {};
         this.childDimensions = {};
         
         this.init();
 
-        console.log(this);
-        
         $(window).resize(function(){
             self.getDimensions(self.element);
             self.getChildrenSize(self.element);
@@ -59,20 +55,37 @@
             // you can add more functions like the one below and
             // call them like so: this.yourOtherFunction(this.element, this.options).
        
-            this.element.addClass('defaults.parentName').css({
+            this.element.addClass(defaults.parentName).css({
                 'width' : defaults.width,
                 'height' : defaults.height,
                 'position': defaults.position, 
                 'overflow': 'hidden'
-            }).children().css({
-                'position': 'absolute'
+            }).children().addClass(defaults.childName).css({
+                'position': 'absolute',
+                'visibility' : 'hidden'
+
             });
 
             this.getDimensions(this.element);
             this.getChildrenSize(this.element);
+            this.startFade(this.element);
 
             // this.getContainerSize(this.element);
             // this.getChildrenSize(this.element);
+        },
+
+        startFade: function(el){
+            var elmID = $(el).attr('id');
+            console.log(el);
+            setInterval(function(){
+            console.log(elmID);
+                $(el).children(":first")
+                    .animate({'opacity':0},defaults.fadeSpeed)
+                    .next('img')
+                    .animate({'opacity':100},defaults.fadeSpeed)
+                    .end()
+                    .appendTo('#' + elmID);
+            },defaults.duration); 
         },
 
         getDimensions: function(el){
@@ -82,20 +95,24 @@
         },
 
         getChildrenSize : function(el){
-            
             var parent = this;
-
             el.children().each(function(key,val){
                 var elm = $(val);
                 elm.load(function(){
                     var elmRatio = elm.width() / elm.height();
                     if(elmRatio <= parent.dimensions.ratio){
-                        elm.css('width', parent.dimensions.width)
+                        elm.css({
+                            'width': parent.dimensions.width,
+                            'visibility' : 'visible' 
+                        })
                         .css('top', (-( elm.height() - parent.dimensions.height) / 2));
                     }else if (elmRatio > parent.dimensions.ratio){
                          elm.css('height', parent.dimensions.height)
                         .css('left', (-( elm.width() - parent.dimensions.width) / 2));
                     }
+                    if(key != 0){
+                        elm.css('opacity',0);
+                    } 
                 }).each(function(){
                     if(this.complete){
                         $(this).trigger('load');
