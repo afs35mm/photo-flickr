@@ -9,12 +9,15 @@ a{text-decoration:none; color:#272727;}
 li{list-style-type:none;}
 body{font-size:100%;}
 #top{
-	width:100%; 
-	height:600px; 
-}
-#top #imgs img {
 	
 }
+#top #imgs {
+	width:100%;
+	height:600px;
+	background-color:red;
+	position:relative;
+}
+
 #top #header {
 	font-family: 'Oswald', sans-serif; 
 	box-sizing:border-box; 
