@@ -27,6 +27,18 @@
 
     Plugin.prototype = {
 
+        startFade: function(el){
+            setInterval(function(){
+            //console.log(el);
+                $(el).children(":first")
+                    .animate({'opacity':0},defaults.fadeSpeed)
+                    .next('img')
+                    .animate({'opacity':100},defaults.fadeSpeed)
+                    .end()
+                    .appendTo(el);
+            },defaults.duration); 
+        },
+
         getContainerSize: function(el,obj,callback){
             console.log(el.width(), el.innerWidth(), el.outerWidth());
             obj.width = el.innerWidth();
@@ -60,11 +72,16 @@
 
         init: function() {
             //As soon as it loads add classes and styles to parent and children
-            self.element.append('LOADING').addClass(defaults.parentName)
+            //Loading animation "borrowed" from Kelly Dyson @ http://dontwakemeup.com/css-loading-animation/
+            //Plz don't sue me :)
+            var loadIcon = $(
+                '<div class="spinner"><div class="b1 se"></div><div class="b2 se"></div><div class="b3 se"></div><div class="b4 se"></div><div class="b5 se"></div><div class="b6 se"></div><div class="b7 se"></div><div class="b8 se"></div><div class="b9 se"></div><div class="b10 se"></div><div class="b11 se"></div><div class="b12 se"></div></div>');
+            loadIcon.insertBefore(self.element);
+            self.element.addClass(defaults.parentName)
                 .css({
                     'overflow': 'hidden'
                 })
-                .children().each(function(key,val){
+                .children('img').each(function(key,val){
                     $val = $(val);
                     $val.addClass(defaults.childName).css({
                         'position': 'absolute',
@@ -72,8 +89,8 @@
                     });
                 });
             //when it loads finally resize all elements
-            //TO DO: remove loading text/gif
             $(window).load(function(){
+                loadIcon.hide();
                 self.getContainerSize(self.element, self.container, function(){
                     self.element.children().each(function(key,value){
                         var $val = $(value);
@@ -85,6 +102,7 @@
                         }
                     });
                 });
+                self.startFade(self.element);
             });
         }
   
