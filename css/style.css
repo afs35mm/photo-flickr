@@ -425,6 +425,7 @@ body{font-size:100%;}
 	#bottom #center {width:400px;}
 	#top #header ul#links li {padding: 23px 0 0 20px;}
 	#top #header h1 {font-size:18px; padding-top:21px;}
+
 }
 
 @media only screen and (max-width: 463px) {
@@ -435,6 +436,8 @@ body{font-size:100%;}
 	#bottom #center {width: 370px;}
 	#top #header svg {margin-left:10px;}
 	#top #header h1 {padding-right:10px;}
+	#top #header h1 {font-size: 16px;}
+	#top #header ul#links li a {font-size:14px;)
 
 }
 
