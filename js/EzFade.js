@@ -15,21 +15,26 @@
     function Plugin( element, options ) {
         this.element = $(element);
         self = this;
-
         this.options = $.extend( {}, defaults, options );
         this._defaults = defaults;
         this._name = pluginName;        
         this.container ={}
-
         this.init();
-
+        console.log(this);
+        $(window).resize(function(){
+            self.getContainerSize(self.element, self.container, function(){
+                self.element.children().each(function(key,value){
+                    var $val = $(value);
+                    self.resizePhoto($val);     
+                });
+            });
+        });
     }
 
     Plugin.prototype = {
-
+        //initializes the set interval to show and 'hide' each image
         startFade: function(el){
             setInterval(function(){
-            //console.log(el);
                 $(el).children(":first")
                     .animate({'opacity':0},defaults.fadeSpeed)
                     .next('img')
@@ -39,8 +44,8 @@
             },defaults.duration); 
         },
 
+        //method for finding the parent size so it knows how to size the child elements
         getContainerSize: function(el,obj,callback){
-            console.log(el.width(), el.innerWidth(), el.outerWidth());
             obj.width = el.innerWidth();
             obj.height = el.height();
             obj.ratio = obj.width / obj.height;
@@ -49,23 +54,28 @@
             }
         },
 
+        //Tha money shot!
         resizePhoto: function(photo){
             var photoHeight = photo.height(),
                 photoWidth = photo.width(),
                 photoRatio = photoWidth / photoHeight,
                 resizeAmt = null;
-            //This if statement resizes based on height or width
+            //resizes based on height or width
             if(photoRatio <= self.container.ratio){
                 resizeAmt = photoHeight * ( self.container.width / photoWidth );
                 photo.css({
                     'width': self.container.width,
-                    'top' : - ((resizeAmt - self.container.height) / 2)
+                    'top' : - ((resizeAmt - self.container.height) / 2),
+                    'height' : 'auto',
+                    'left' : 'auto'
                 });
             }else{
                 resizeAmt = photoWidth * ( self.container.height / photoHeight );
                 photo.css({
                     'height': self.container.height,
-                    'left': - ((resizeAmt - self.container.width) / 2)
+                    'left': - ((resizeAmt - self.container.width) / 2),
+                    'top' : 'auto',
+                    'width' : 'auto'
                 });
             }
         },
