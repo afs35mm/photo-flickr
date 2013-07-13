@@ -417,6 +417,8 @@ body{font-size:100%;}
 	#bottom #center {width:600px;}
 	#top #header ul#links li {padding: 23px 0 0 20px;}
 	#top #header h1 {font-size:20px; padding-top:24px;}
+	#top #imgs {height:300px;}
+
 }
 
 @media only screen and (max-width: 663px) {
@@ -431,6 +433,9 @@ body{font-size:100%;}
 	#top #header h1 {font-size:18px; padding-top:21px;}
 	#bottom #center #nav li {margin: 0 30px 0 0;}
 	#bottom #center {width: 370px;}
+	#top #header svg {margin-left:10px;}
+	#top #header h1 {padding-right:10px;}
+
 }
 
 @media only screen and (max-width: 433px) {
