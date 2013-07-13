@@ -1,3 +1,4 @@
+//jQuery boilerplate used, from http://jqueryboilerplate.com/ thx people smarter than me!
 ;(function ( $, window, document, undefined ) {
     // Create the defaults once
     var pluginName = "EzFade",
