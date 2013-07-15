@@ -1113,7 +1113,8 @@ body {
   width: 70%;
   margin: 0 auto;
   color: #fff;
-  font-family: sans-serif; }
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300; }
 
 #main #about h2 {
   padding-bottom: 20px;
@@ -1176,7 +1177,10 @@ body {
 
   #top #header h1 {
     font-size: 18px;
-    padding-top: 21px; } }
+    padding-top: 21px; }
+
+  #main #about {
+    width: 100%; } }
 @media only screen and (max-width: 463px) {
   #bottom #center {
     width: 200px; }

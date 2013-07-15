@@ -225,7 +225,8 @@ body{font-size:100%;}
 	width:70%;
 	margin: 0 auto;
 	color:#fff;
-	font-family:sans-serif;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   font-weight: 300;
 }
 #main #about h2{
 	padding-bottom:20px;
@@ -278,6 +279,7 @@ body{font-size:100%;}
 	#bottom #center {width:400px;}
 	#top #header ul#links li {padding: 23px 0 0 20px;}
 	#top #header h1 {font-size:18px; padding-top:21px;}
+	#main #about { width:100%;}
 
 }
 
