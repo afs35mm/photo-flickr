@@ -1,3 +1,7 @@
+//TO DO: ADD LOGIC TO DETERMINE HOW MANY CHILD ELMS THERE ARE AND THEN START FADE
+//TO DO: ADD GENERIC SPINNER
+
+
 //jQuery boilerplate used, from http://jqueryboilerplate.com/ thx people smarter than me!
 ;(function ( $, window, document, undefined ) {
     // Create the defaults once
