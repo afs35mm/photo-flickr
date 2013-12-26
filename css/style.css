@@ -1,27 +1,3 @@
-
-html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;}article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}body {line-height: 1;}ol, ul {list-style: none;}blockquote, q {quotes: none;}blockquote:before, blockquote:after,q:before, q:after {content: '';content: none;}table {border-collapse: collapse;border-spacing: 0;}html {}
-*{	
-	-webkit-box-sizing: border-box; 
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;  
-
-}
-a{text-decoration:none; color:#272727;}
-li{list-style-type:none;}
-body{font-size:100%;}
-#top{
-	
-}
-#top #imgs {
-	width:100%;
-	height:600px;
-	position:relative;
-}
-
-#top #imgs img{
-	opacity:0;
-}
-
 /*! normalize.css v1.1.0 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -937,7 +913,6 @@ body {
   width: 100%;
   height: 600px;
   position: relative; }
->>>>>>> f6dfe8f2ea87ae2e6edbd2199e19786556e711f6
 
 #top #header {
   font-family: 'Oswald', sans-serif;
@@ -1217,162 +1192,8 @@ body {
     font-size: 18px;
     padding-top: 21px; }
 
-<<<<<<< HEAD
-/**LOADING ANIMATION STYLES**/
-@-webkit-keyframes fade {
-  from {
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-    opacity: 1;
-  }
-
-  to {
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
-    opacity: 0.25;
-  }
-}
-
-@keyframes fade {
-  from {
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-    opacity: 1;
-  }
-
-  to {
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
-    opacity: 0.25;
-  }
-}
-
-.spinner {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  display: block;
-  top: 50%;
-  left: 50%;
-  margin: -10px 0 0 -10px;
-  	text-align: center;
-	position: relative;
-	top: 290px;
-	z-index: 99999;
-}
-.spinner .se {
-  width: 10%;
-  height: 33%;
-  background: black;
-  position: absolute;
-  left: 44.5%;
-  top: 37%;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-  -webkit-border-radius: 50px;
-  -ms-border-radius: 50px;
-  border-radius: 50px;
-  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-}
-.spinner .b1 {
-  -webkit-transform: rotate(0deg) translate(0, -142%);
-  -ms-transform: rotate(0deg) translate(0, -142%);
-  transform: rotate(0deg) translate(0, -142%);
-  -webkit-animation: fade 0.75s infinite 0s;
-  -ms-animation: fade 0.75s infinite 0s;
-  animation: fade 0.75s infinite 0s;
-}
-.spinner .b2 {
-  -webkit-transform: rotate(30deg) translate(0, -142%);
-  -ms-transform: rotate(30deg) translate(0, -142%);
-  transform: rotate(30deg) translate(0, -142%);
-  -webkit-animation: fade 0.75s infinite 0.0625s;
-  -ms-animation: fade 0.75s infinite 0.0625s;
-  animation: fade 0.75s infinite 0.0625s;
-}
-.spinner .b3 {
-  -webkit-transform: rotate(60deg) translate(0, -142%);
-  -ms-transform: rotate(60deg) translate(0, -142%);
-  transform: rotate(60deg) translate(0, -142%);
-  -webkit-animation: fade 0.75s infinite 0.125s;
-  -ms-animation: fade 0.75s infinite 0.125s;
-  animation: fade 0.75s infinite 0.125s;
-}
-.spinner .b4 {
-  -webkit-transform: rotate(90deg) translate(0, -142%);
-  -ms-transform: rotate(90deg) translate(0, -142%);
-  transform: rotate(90deg) translate(0, -142%);
-  -webkit-animation: fade 0.75s infinite 0.1875s;
-  -ms-animation: fade 0.75s infinite 0.1875s;
-  animation: fade 0.75s infinite 0.1875s;
-}
-.spinner .b5 {
-  -webkit-transform: rotate(120deg) translate(0, -142%);
-  -ms-transform: rotate(120deg) translate(0, -142%);
-  transform: rotate(120deg) translate(0, -142%);
-  -webkit-animation: fade 0.75s infinite 0.25s;
-  -ms-animation: fade 0.75s infinite 0.25s;
-  animation: fade 0.75s infinite 0.25s;
-}
-.spinner .b6 {
-  -webkit-transform: rotate(150deg) translate(0, -142%);
-  -ms-transform: rotate(150deg) translate(0, -142%);
-  transform: rotate(150deg) translate(0, -142%);
-  -webkit-animation: fade 0.75s infinite 0.3125s;
-  -ms-animation: fade 0.75s infinite 0.3125s;
-  animation: fade 0.75s infinite 0.3125s;
-}
-.spinner .b7 {
-  -webkit-transform: rotate(180deg) translate(0, -142%);
-  -ms-transform: rotate(180deg) translate(0, -142%);
-  transform: rotate(180deg) translate(0, -142%);
-  -webkit-animation: fade 0.75s infinite 0.375s;
-  -ms-animation: fade 0.75s infinite 0.375s;
-  animation: fade 0.75s infinite 0.375s;
-}
-.spinner .b8 {
-  -webkit-transform: rotate(210deg) translate(0, -142%);
-  -ms-transform: rotate(210deg) translate(0, -142%);
-  transform: rotate(210deg) translate(0, -142%);
-  -webkit-animation: fade 0.75s infinite 0.4375s;
-  -ms-animation: fade 0.75s infinite 0.4375s;
-  animation: fade 0.75s infinite 0.4375s;
-}
-.spinner .b9 {
-  -webkit-transform: rotate(240deg) translate(0, -142%);
-  -ms-transform: rotate(240deg) translate(0, -142%);
-  transform: rotate(240deg) translate(0, -142%);
-  -webkit-animation: fade 0.75s infinite 0.5s;
-  -ms-animation: fade 0.75s infinite 0.5s;
-  animation: fade 0.75s infinite 0.5s;
-}
-.spinner .b10 {
-  -webkit-transform: rotate(270deg) translate(0, -142%);
-  -ms-transform: rotate(270deg) translate(0, -142%);
-  transform: rotate(270deg) translate(0, -142%);
-  -webkit-animation: fade 0.75s infinite 0.5625s;
-  -ms-animation: fade 0.75s infinite 0.5625s;
-  animation: fade 0.75s infinite 0.5625s;
-}
-.spinner .b11 {
-  -webkit-transform: rotate(300deg) translate(0, -142%);
-  -ms-transform: rotate(300deg) translate(0, -142%);
-  transform: rotate(300deg) translate(0, -142%);
-  -webkit-animation: fade 0.75s infinite 0.625s;
-  -ms-animation: fade 0.75s infinite 0.625s;
-  animation: fade 0.75s infinite 0.625s;
-}
-.spinner .b12 {
-  -webkit-transform: rotate(330deg) translate(0, -142%);
-  -ms-transform: rotate(330deg) translate(0, -142%);
-  transform: rotate(330deg) translate(0, -142%);
-  -webkit-animation: fade 0.75s infinite 0.6875s;
-  -ms-animation: fade 0.75s infinite 0.6875s;
-  animation: fade 0.75s infinite 0.6875s;
-}
-
-
-=======
   #bottom #center #nav li {
     margin: 0 30px 0 0; }
->>>>>>> f6dfe8f2ea87ae2e6edbd2199e19786556e711f6
 
   #bottom #center {
     width: 370px; }
